@@ -15,6 +15,7 @@ import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringDef;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.telecom.Call;
@@ -98,7 +99,7 @@ public class CrimeDetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_crime_detail, container, false);
+        final View view = inflater.inflate(R.layout.fragment_crime_detail, container, false);
 
         mCrimeTitle = (EditText) view.findViewById(R.id.crime_title);
         mCrimeDate = (Button) view.findViewById(R.id.crime_date);
@@ -114,6 +115,10 @@ omid=(Button)view.findViewById(R.id.omid);
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(),"omid karami",Toast.LENGTH_LONG).show();
+                Snackbar snackbar = Snackbar
+                        .make(view, "Welcome to AndroidHive", Snackbar.LENGTH_LONG);
+
+                snackbar.show();
             }
         });
         mCrimeDate.setOnClickListener(new View.OnClickListener() {
