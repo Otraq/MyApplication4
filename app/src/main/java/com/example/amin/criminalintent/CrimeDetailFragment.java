@@ -59,6 +59,8 @@ public class CrimeDetailFragment extends Fragment {
     private ImageButton mPhotoButton;
     private ImageView mPhotoView;
     private File mPhotoFile;
+    private Button omid;
+
 
     private Callbacks mCallbacks;
 
@@ -105,9 +107,15 @@ public class CrimeDetailFragment extends Fragment {
         mCrimeReport = (Button) view.findViewById(R.id.crime_report);
         mPhotoButton = (ImageButton) view.findViewById(R.id.crime_camera);
         mPhotoView = (ImageView) view.findViewById(R.id.crime_photo);
-
+omid=(Button)view.findViewById(R.id.omid);
         mCrimeDate.setText(mCrime.getDate().toString());
 //        mCrimeDate.setEnabled(false);
+        omid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(),"omid karami",Toast.LENGTH_LONG).show();
+            }
+        });
         mCrimeDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
